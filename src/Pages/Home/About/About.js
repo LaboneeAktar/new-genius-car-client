@@ -36,7 +36,7 @@ const About = () => {
             humour, or randomised words which don't look even slightly
             believable.{" "}
           </p>
-          <button className="btn border-0 bg-rose-800 hover:bg-rose-500">
+          <button className="btn border-0 font-normal bg-rose-800 hover:bg-rose-500">
             Get More Info
           </button>
         </div>
