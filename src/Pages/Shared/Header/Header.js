@@ -1,10 +1,20 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Log Out Successful");
+      })
+      .catch((error) => console.error(error));
+  };
+
   const menuItems = (
     <>
       <li className="font-semibold text-lg">
@@ -18,7 +28,7 @@ const Header = () => {
           </li>
           <li className="font-semibold text-lg">
             <button
-              onClick={logOut}
+              onClick={handleLogOut}
               className="btn btn-outline btn-error font-normal"
             >
               LogOut

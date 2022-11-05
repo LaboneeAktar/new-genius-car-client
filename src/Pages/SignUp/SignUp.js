@@ -60,7 +60,7 @@ const SignUp = () => {
                 <span className="label-text text-lg">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Enter Password"
                 className="input input-bordered"
