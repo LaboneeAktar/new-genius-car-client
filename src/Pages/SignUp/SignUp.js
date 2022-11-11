@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { setAuthToken } from "../../api/auth";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
@@ -19,6 +20,7 @@ const SignUp = () => {
         toast.success("User Created Successfully");
         form.reset();
         console.log(user);
+        setAuthToken(user);
       })
       .catch((err) => console.error(err));
   };

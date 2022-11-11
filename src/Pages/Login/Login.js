@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Login = () => {
         };
 
         //get jwt token
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://new-genius-car-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -93,11 +94,12 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center">
-            New to Genius Car{" "}
+            New to Genius Car?{" "}
             <Link className="text-rose-700 font-bold" to="/signup">
               Sign Up
             </Link>{" "}
           </p>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
